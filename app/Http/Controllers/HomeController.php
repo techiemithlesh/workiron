@@ -25,6 +25,8 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
+use App\Mail\PdfEmail;
+
 
 class HomeController extends Controller
 {
@@ -154,13 +156,13 @@ class HomeController extends Controller
     }
 
 
-    // PDF SENT BY EMAIL
+
 // PDF SENT BY EMAIL
 public function sendPdfEmail(Request $request)
 {
     // Validate the request
     $request->validate([
-        'inspection_id' => 'required|exists:inspection_details,id', // Update table name here
+        'inspection_id' => 'required|exists:inspection_details,id',
         'email' => 'required|email'
     ]);
 
@@ -170,13 +172,47 @@ public function sendPdfEmail(Request $request)
     // Generate the PDF URL dynamically
     $pdfUrl = "https://" . $_SERVER['HTTP_HOST'] . "/pdf/view/{$inspection->id}";
 
-
-
     // Send email with PDF attachment
     Mail::to($request->email)->send(new PdfEmail($pdfUrl));
 
     return response()->json(['message' => 'Email sent successfully', 'data' =>  $pdfUrl]);
 }
+
+// public function sendPdfEmail(Request $request)
+// {
+//     // Validate the request
+//     $request->validate([
+//         'inspection_id' => 'required|exists:inspection_details,id',
+//         'email' => 'required|email'
+//     ]);
+
+//     // Retrieve the inspection data
+//     $inspection = InspectionDetail::findOrFail($request->inspection_id);
+
+//     // Generate the PDF URL dynamically
+//     $pdfUrl = "https://" . $_SERVER['HTTP_HOST'] . "/pdf/view/{$inspection->id}";
+
+//     // Email content
+//     $subject = 'Your Vehicle Inspection Report';
+//     $message = "Dear User,\n\n";
+//     $message .= "Your vehicle inspection report is ready. Please download the attached PDF:\n\n";
+//     $message .= $pdfUrl . "\n\n";
+//     $message .= "Thanks,\n";
+//     $message .= config('app.name');
+
+//     // Send email with PDF URL as content
+//     // $headers = "From: " . config('mail.from.address') . "\r\n";
+//     $headers = "From: support@codewithmithlesh.com\r\n";
+//     $headers .= "Reply-To: " . config('mail.from.address') . "\r\n";
+//     $headers .= "X-Mailer: PHP/" . phpversion();
+
+//     if (mail($request->email, $subject, $message, $headers)) {
+//         return response()->json(['message' => 'Email sent successfully', 'data' =>  $pdfUrl]);
+//     } else {
+//         return response()->json(['message' => 'Failed to send email']);
+//     }
+// }
+
 
     public function reportVehicleInspection($id, Request $request){
         // dd(ini_get('upload_max_filesize'), ini_get('post_max_size'), ini_get('memory_limit'));
