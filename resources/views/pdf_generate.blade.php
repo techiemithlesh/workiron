@@ -570,22 +570,32 @@
 				</div>
 			</section>
 			{{-- SPECIFICATION WORKSHEET START END --}}
-			{{-- IMAGE BOX CONTAINER --}}
-			@if(sizeof($data->conditions) > 0)
-			<section class="section_image mt-10" style=" margin-top: 10px;">
-				<div class="image_container" style="display: block; justify-content: center;">
-					<div class="grid col-lg-3 gap3" style=" display: inline-block;width:100%">
-						@foreach($data->conditions as $condition)
-						<div style=" text-align: center; border: 1px solid gray; margin: 0 5px;width:18%;float:left">
-							<img src="{{$condition->inspection_img}}" alt="Placeholder Image 1" style="max-width:140px;width: 100%;  height: auto;">
-							<p style="margin: 0; padding: 5px 0;">{{$condition->condition_name}}</p>
-						</div>
-						@endforeach
-					</div>
-				</div>
-			</section>
-			@endif
-			{{-- IMAGE BOX CONTAINER END HERE --}}
+			
+	                            	{{-- IMAGE BOX CONTAINER --}}
+											@if(sizeof($images) > 0)
+											<section class="section_image mt-10" style=" margin-top: 10px;">
+												<div class="image_container" style="display: block; justify-content: center;">
+											    	<table border="1">
+											    	    <tr>
+													    @php $i=1;@endphp
+														@foreach($images as $condition)
+														@if($condition->inspection_img != '' && $condition->inspection_img)
+														<td>
+															<img src="{{$condition->inspection_img}}" alt="Placeholder Image 1" style="width: 100%;  height: 150px;margin-bottom:10px;">
+															<p style="margin: 0;">{{$condition->condition_name}}</p>
+														</td>
+														@php $i++; @endphp
+														@if($i == 5)
+														    </tr><tr>
+														@endif        
+														@endif
+														@endforeach
+														</tr>
+													</table>
+												</div>
+											</section>
+											@endif
+											{{-- IMAGE BOX CONTAINER END HERE --}}
 
 		    <!--DISCLAIMER SECTION START HERE-->
 		    <section class="disclaimer_container mt-10" style=" margin-top: 10px;">
