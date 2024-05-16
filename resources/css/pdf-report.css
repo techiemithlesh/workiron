@@ -1,0 +1,353 @@
+.container {
+	width: 100%
+}
+
+.header {
+	width: 100%;
+	justify-content: space-around;
+	border: 1px solid gray;
+	padding: 5px;
+	border-radius: 5px;
+}
+
+.flex {
+	display: flex;
+}
+
+.container {
+	max-width: 960px;
+	/* Adjust as needed */
+	margin: 0 auto;
+}
+
+.logo_container {
+	width: 35%;
+}
+
+.logo_container p {
+	font-weight: 1000;
+	text-transform: capitalize;
+	font-size: 17px;
+}
+
+.client_information {
+	width: 100%;
+	border-left: 2px solid gainsboro;
+	padding-left: 15px;
+}
+
+.vehicle_information {
+	width: 30%;
+	
+}
+
+.inspector_id {
+	font-size: 15px;
+	font-weight: 600;
+}
+
+.inspector_id span {
+	font-weight: 100;
+}
+
+.inspection_id {
+	font-size: 10px;
+	margin-left: 10px;
+}
+
+.lower_information_content {
+	margin-top: 10px;
+}
+
+.lower_information_content div {
+	margin-right: 5px;
+	border-left: 2px solid gainsboro;
+	padding: 5px;
+}
+
+.lower_information_content div:first-child {
+	border-left: none;
+}
+
+.lower_information_content div p {
+	font-size: 10px;
+}
+
+.year {
+	width: 100%;
+	margin-top: 5px;
+	padding: 5px;
+	border-left: 2px solid gainsboro;
+	
+	border-right: 2px solid gainsboro;
+	
+	border-bottom: 2px solid gainsboro;
+}
+
+.year_container {
+	display: flex;
+	justify-content: space-between;
+}
+
+.year_container div {
+	flex: 1;
+	padding: 10px;
+}
+
+.year_container p {
+	margin: 0;
+	margin-top: 5px;
+	font-size: 10px;
+}
+
+.year_container p span {
+	float: right;
+}
+
+.worksheet {
+	width: 100%;
+	padding: 5px;
+	border: 2px solid gainsboro;
+	margin-top: 10px;
+	border-radius: 10px;
+}
+
+.worksheet p {
+	font-size: 10px;
+}
+
+.steering_interior {
+	width: 100%;
+	margin-top: 10px;
+}
+
+.steering_interior>div {
+	margin-right: 5px;
+}
+
+.steering_interior .flex {
+	display: flex;
+}
+
+.steering_interior .container table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.steering_interior .container table th {
+	background-color: rgb(202, 30, 30);
+	color: white;
+	font-weight: bold;
+	text-align: center;
+	padding: 8px;
+}
+
+.steering_interior .container table td {
+	padding: 8px;
+	border-bottom: 1px solid gainsboro;
+	text-align: left;
+}
+
+.steering_interior .container table tr:last-child td {
+	border-bottom: none;
+}
+
+
+.engine_section_a_container,
+.engine_section_b_container {
+	margin-top: 10px;
+}
+
+.engine_section_a_container>div {
+	flex: 1;
+	width: 50%;
+	border: 1px solid gainsboro;
+}
+
+.engine_section_a_container>div h4 {
+	padding-left: 5px;
+	font-size: 14px;
+}
+
+.engine_section_b_container>div {
+	flex: 1;
+	width: 50%;
+	
+}
+
+.engine_section_b_container .left_enginer_container>div {
+	border: 1px solid gainsboro;
+	margin-top: 10px;
+}
+
+.Miscellaneous_container {
+	border: 1px solid gainsboro;
+	margin-top: 10px;
+}
+
+.engine_section_b_container .left .engine_section_a_container>div h4,
+.engine_section_b_container>div h4 {
+	padding-left: 5px;
+	font-size: 14px;
+}
+
+.options {
+	padding: 10px;
+	border-radius: 5px;
+}
+
+.options p {
+	margin: 0;
+	margin-bottom: 5px;
+	font-size: 12px;
+}
+
+.options p span {
+	float: right;
+}
+
+.options table tr {
+	border-bottom: 1px solid rgb(202, 30, 30);
+}
+
+.options table td {
+	display: block;
+}
+
+.options table tr:last-child {
+	border-bottom: none;
+}
+
+.transmission {
+	margin-top: 10px;
+}
+
+.left_box_container {
+	width: 100%;
+}
+
+.left_box_container>div {
+	border: 1px solid gainsboro;
+	padding-left: 5px;
+}
+
+.left_box_container>div h4 {
+	font-size: 14px;
+	
+}
+
+.right_box_container {
+	width: 100%;
+	border: 1px solid gainsboro;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+.right_box_container h4 {
+	margin-top: 0;
+	font-size: 14px;
+}
+
+.right_box_container table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.right_box_container th,
+.right_box_container td {
+	padding: 8px;
+	border-bottom: 1px solid gainsboro;
+	text-align: left;
+	font-size: 12px;
+}
+
+.right_box_container th {
+	font-weight: bold;
+	width: 40%;
+	
+}
+
+.right_box_container td {
+	display: flex;
+	align-items: center;
+	width: 60%;
+}
+
+.right_box_container td span {
+	flex-grow: 1;
+}
+
+.tyre_container {
+	margin-top: 10px;
+}
+
+.tyre_flex_container>div {
+	border: 1px solid gainsboro;
+	text-align: center;
+	padding: 10px;
+	line-height: 1.2%;
+}
+
+.tyre_flex_container>div h5 {
+	font-size: 10px;
+}
+
+.tyre_flex_container>div p {
+	font-size: 12px;
+	margin-top: 10px;
+}
+
+.condition_container {
+	margin-top: 10px;
+	border: 1px solid gainsboro;
+	font-size: 10px;
+	padding-left: 5px;
+	border-radius: 10px;
+}
+
+.mt-10 {
+	margin-top: 10px;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+td,
+th {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 5px;
+	font-size: 12px;
+}
+
+.image_container {
+	display: flex;
+	justify-content: center;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	
+	gap: 4px;
+	
+}
+
+.grid>div {
+	text-align: center;
+	border: 1px solid #dddddd;
+	margin-bottom: 10px;
+}
+
+.grid img {
+	width: 100%;
+	
+	height: auto;
+	
+}
+
+.grid p {
+	margin: 0;
+}
